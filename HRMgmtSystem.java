@@ -3,15 +3,18 @@
 
 
 class HRMgmtSystem {
+    public static void main(String[] args) {
+        
+    }
 
 }
 
 
-public class Departments{
+class Departments{
 
 }
 
-public class Employees{
+class Employees{
 
 
 
@@ -22,8 +25,8 @@ class Manager {
 
 
 
-    public addEmployee{
-        print.out("adding employee")
+    public void addEmployee () {
+        System.out.println("adding an employee by the manager");
     }
 }
 
@@ -35,13 +38,3 @@ class Regular {
 
 }
 
-
-public class Main{
-
-    public static void main(String[] args) {
-        
-    }
-
-
-    
-}
