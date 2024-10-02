@@ -2,20 +2,45 @@
 
 
 
-
-
-public class departments() {
+class HRMgmtSystem {
 
 }
 
-public class Employees(){
+
+public class Departments{
 
 }
 
-pu
+public class Employees{
 
 
-public void class Main() {
+
+
+//manager class
+class Manager {
+    
+
+
+
+    public addEmployee{
+        print.out("adding employee")
+    }
+}
+
+// regular class
+
+class Regular {
+
+}
+
+}
+
+
+public class Main{
+
+    public static void main(String[] args) {
+        
+    }
 
 
     
