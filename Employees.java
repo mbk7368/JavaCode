@@ -2,24 +2,12 @@
 
 
 
-class HRMgmtSystem {
-    public static void main(String[] args) {
-        
-    }
-
-}
-
-
-class Departments{
-
-}
-
 class Employees{
-
-
-
-
-//manager class
+    
+    
+    
+    
+    //manager class
 class Manager {
     
 
@@ -37,4 +25,3 @@ class Regular {
 }
 
 }
-
