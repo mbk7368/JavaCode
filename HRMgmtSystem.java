@@ -1,4 +1,7 @@
 
+import java.util.ArrayList;
+
+
 
 
 
@@ -11,12 +14,17 @@ class HRMgmtSystem {
 
 
 class Departments{
+    String Name;
+    String size;
+    List<string> accessibility = new ArrayList<>();
+
 
 }
 
 class Employees{
 
 
+}
 
 
 //manager class
@@ -36,5 +44,4 @@ class Regular {
 
 }
 
-}
 
