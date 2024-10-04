@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 
 
+<<<<<<< HEAD:HRMgmtSystem.java
 class HRMgmtSystem {
     public static void main(String[] args) {
         
@@ -28,6 +29,14 @@ class Employees{
 
 
 //manager class
+=======
+class Employees{
+    
+    
+    
+    
+    //manager class
+>>>>>>> c9eee09380f8927dd7219e16e5e47539046ec61d:Employees.java
 class Manager {
     
 
@@ -44,4 +53,8 @@ class Regular {
 
 }
 
+<<<<<<< HEAD:HRMgmtSystem.java
 
+=======
+}
+>>>>>>> c9eee09380f8927dd7219e16e5e47539046ec61d:Employees.java
