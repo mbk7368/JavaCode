@@ -7,7 +7,6 @@ class Employee{
     int id;
     String name;
     int age;
-    Departments department;
     String role;
     int salary;
 
@@ -16,10 +15,21 @@ class Employee{
         this.id = id1;
         this.name = name1;
         this.age = age1;
-        this.department = department1;
         this.role = role1;
         this.salary = salary1;
+
+
+        boolean DepartmentExist = false;
+        for (Departments dept : DepartmentList){
+            if ( dept.name.equals(department1.name)  ){
+                this.department
+            }
+
+        }
+
+
         department.addEmployee(this)
+
     }
 
     ///////Methods

@@ -7,11 +7,15 @@ class Departments{
     int ID;
     String Name;
     List<String> members = new ArrayList<>();
+    List<Departments> DepartmentList = new ArrayList<>();
 
 ///////Constructor
-    public Departments(int V1, String V2) {
-        this.ID = V1;
-        this.Name = V2;
+    public Departments(String V1) {
+        int counter = (1 + (int)DepartmentList.size());
+        this.ID = this.counter;
+        this.Name = V1;
+        DepartmentList.add(V1)
+        this.counter += 1;
     }
 
 //////////Methods
