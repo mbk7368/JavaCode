@@ -3,12 +3,15 @@
 
 class Employees{
 
+    ///////////Vars
     int id;
     String name;
     String age;
     String department;
     String role;
     int salary;
+
+    
 
 }
 
