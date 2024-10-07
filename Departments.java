@@ -7,7 +7,7 @@ class Departments{
     int ID;
     String Name;
     List<String> members = new ArrayList<>();
-    List<Departments> DepartmentList = new ArrayList<>();
+    static public List<String> DepartmentList = new ArrayList<>();
 
 ///////Constructor
     public Departments(String V1) {
@@ -15,7 +15,6 @@ class Departments{
         this.ID = this.counter;
         this.Name = V1;
         DepartmentList.add(V1)
-        this.counter += 1;
     }
 
 //////////Methods

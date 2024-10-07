@@ -11,7 +11,7 @@ class Employee{
     int salary;
 
     ////////constructor....................................................................................
-    public void Employees(int id1, String name1, int age1, Departments department1, String role1, int salary1 ){
+    public void Employees(int id1, String name1, int age1, String department1, String role1, int salary1 ){
         this.id = id1;
         this.name = name1;
         this.age = age1;
@@ -20,8 +20,8 @@ class Employee{
 
 
         boolean DepartmentExist = false;
-        for (Departments dept : DepartmentList){
-            if ( dept.name.equals(department1.name)  ){
+        for (String dept : DepartmentList){
+            if ( dept.equals(department1)  ){
                 this.department
             }
 
