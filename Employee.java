@@ -1,6 +1,5 @@
-import Departments;
-import jave.util.Map;
-import jave.util.Hashmap;
+import java.util.Map;
+import java.util.HashMap;
 
 
 class Employee{
@@ -10,7 +9,9 @@ class Employee{
     String name;
     int age;
     String role;
+    String department;
     int salary;
+    static public Map<String, Departments> DepartmentMap = new HashMap<>();
 
     ////////constructor....................................................................................
     public void Employees(int id1, String name1, int age1, String department1, String role1, int salary1 ){
@@ -19,18 +20,28 @@ class Employee{
         this.age = age1;
         this.role = role1;
         this.salary = salary1;
+        this.department = department1;
 
 
         boolean DepartmentExist = false;
         for (String dept : DepartmentList){
             if ( dept.equals(department1)  ){
-                
+                DepartmentExist = true;
             }
 
         }
+        if (DepartmentExist) {
+            Departments Department = DepartmentMap.get(department1);
+            if (Department != null) {
+                Department.addEmployee(name1);
+            } else {
+                System.out.println("Error: Department object not found");
+            }
 
+        } else {
+            System.out.println("Department does not exist");
 
-        department.addEmployee(this)
+        }
 
     }
 
@@ -63,6 +74,9 @@ class Employee{
             case "Worker":
                 object.role = "Specialist";
                 System.out.println("Employee was promoted to Specialist");
+                break;
+            default:
+                System.out.println("Employee role is unknown");
                 break;
         }
 

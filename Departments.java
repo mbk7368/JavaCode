@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 import java.util.List;
-import Departments
 
-class Departments{
+
+public class Departments{
 
 //////////Vars
     int ID;
@@ -16,7 +16,7 @@ class Departments{
         counter = (1 + (int)DepartmentList.size());
         this.ID = this.counter;
         this.Name = V1;
-        DepartmentList.add(V1)
+        DepartmentList.add(V1);
     }
 
 //////////Methods
