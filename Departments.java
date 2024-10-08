@@ -7,14 +7,13 @@ public class Departments{
 //////////Vars
     int ID;
     String Name;
-    int counter;
     List<String> members = new ArrayList<>();
     static public List<String> DepartmentList = new ArrayList<>();
 
 ///////Constructor
     public Departments(String V1) {
-        counter = (1 + (int)DepartmentList.size());
-        this.ID = this.counter;
+        int counter = (1 + (int)DepartmentList.size());
+        this.ID = counter;
         this.Name = V1;
         DepartmentList.add(V1);
     }

@@ -14,7 +14,7 @@ class Employee{
     static public Map<String, Departments> DepartmentMap = new HashMap<>();
 
     ////////constructor....................................................................................
-    public void Employee(int id1, String name1, int age1, String department1, String role1, int salary1 ){
+    public Employee (int id1, String name1, int age1, String department1, String role1, int salary1){
         this.id = id1;
         this.name = name1;
         this.age = age1;
@@ -48,70 +48,60 @@ class Employee{
     ///////Methods
     public void promote(Employee object) {
         switch (object.role) {
-            case "CEO":
-                System.out.println("You can not promote a CEO");
-                break;        
-            case "COO":
+            case "CEO" -> System.out.println("You can not promote a CEO");
+            case "COO" -> {
                 object.role = "CEO";
                 System.out.println("Employee was promoted to CEO");
-                break;
-            case "DepartmentManager":
+            }
+            case "DepartmentManager" -> {
                 object.role = "COO";
                 System.out.println("Employee was promoted to COO");
-                break;
-            case "ManagerAssisstant":
+            }
+            case "ManagerAssisstant" -> {
                 object.role = "DepartmentManager";
                 System.out.println("Employee was promoted to DepartmentManager");
-                break;
-            case "Supervisor":
+            }
+            case "Supervisor" -> {
                 object.role = "ManagerAssisstant";
                 System.out.println("Employee was promoted to ManagerAssisstant");
-                break;
-            case "Specialist":
+            }
+            case "Specialist" -> {
                 object.role = "Supervisor";
                 System.out.println("Employee was promoted to Supervisor");
-                break;
-            case "Worker":
+            }
+            case "Worker" -> {
                 object.role = "Specialist";
                 System.out.println("Employee was promoted to Specialist");
-                break;
-            default:
-                System.out.println("Employee role is unknown");
-                break;
+            }
+            default -> System.out.println("Employee role is unknown");
         }
 
     }
     public void demote(Employee object) {
         switch (object.role) {
-            case "CEO":
+            case "CEO" -> {
                 object.role = "COO";
                 System.out.println("Employee was demoted to COO");
-                break;        
-            case "COO":
+            }
+            case "COO" -> {
                 object.role = "DepartmentManager";
                 System.out.println("Employee was demoted to DepartmentManager");
-                break;
-            case "DepartmentManager":
+            }
+            case "DepartmentManager" -> {
                 object.role = "ManagerAssisstant";
                 System.out.println("Employee was demoted to ManagerAssisstant");
-                break;
-            case "ManagerAssisstant":
+            }
+            case "ManagerAssisstant" -> {
                 object.role = "Supervisor";
                 System.out.println("Employee was demoted to Supervisor");
-                break;
-            case "Supervisor":
+            }
+            case "Supervisor" -> {
                 object.role = "Specialist";
                 System.out.println("Employee was demoted to Specialist");
-                break;
-            case "Specialist":
-                System.out.println("You can not demote a Specialist");
-                break;
-            case "Worker":
-                System.out.println("You can not demote a worker");
-                break;
-            default:
-                System.out.println("Employee role is unknown");
-                break;
+            }
+            case "Specialist" -> System.out.println("You can not demote a Specialist");
+            case "Worker" -> System.out.println("You can not demote a worker");
+            default -> System.out.println("Employee role is unknown");
         }
 
     }
