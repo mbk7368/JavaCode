@@ -1,5 +1,5 @@
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 
 class Employee{
@@ -14,7 +14,7 @@ class Employee{
     static public Map<String, Departments> DepartmentMap = new HashMap<>();
 
     ////////constructor....................................................................................
-    public void Employees(int id1, String name1, int age1, String department1, String role1, int salary1 ){
+    public void Employee(int id1, String name1, int age1, String department1, String role1, int salary1 ){
         this.id = id1;
         this.name = name1;
         this.age = age1;
@@ -24,7 +24,7 @@ class Employee{
 
 
         boolean DepartmentExist = false;
-        for (String dept : DepartmentList){
+        for (String dept : Departments.DepartmentList){
             if ( dept.equals(department1)  ){
                 DepartmentExist = true;
             }
@@ -108,6 +108,9 @@ class Employee{
                 break;
             case "Worker":
                 System.out.println("You can not demote a worker");
+                break;
+            default:
+                System.out.println("Employee role is unknown");
                 break;
         }
 
