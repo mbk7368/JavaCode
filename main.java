@@ -4,7 +4,7 @@ class main {
     
     public static void main(String[] args) {
 
-        Departments itDept = new Departments(101, "IT");
+        Departments itDept = new Departments("IT");
         
         itDept.addEmployee("noor");
         itDept.addEmployee("Daniel");

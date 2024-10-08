@@ -28,7 +28,6 @@ class Employee{
             if ( dept.equals(department1)  ){
                 DepartmentExist = true;
             }
-
         }
         if (DepartmentExist) {
             Departments Department = DepartmentMap.get(department1);
@@ -127,9 +126,6 @@ class Employee{
 class Manager {
     
 
-    public void addEmployee () {
-        System.out.println("adding an employee by the manager");
-    }
 }
 
 
