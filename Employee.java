@@ -1,4 +1,6 @@
-
+import Departments;
+import jave.util.Map;
+import jave.util.Hashmap;
 
 
 class Employee{
@@ -22,7 +24,7 @@ class Employee{
         boolean DepartmentExist = false;
         for (String dept : DepartmentList){
             if ( dept.equals(department1)  ){
-                this.department
+                
             }
 
         }
