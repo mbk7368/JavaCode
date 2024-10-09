@@ -128,7 +128,7 @@ class Employee{
         System.out.println("Salary:"+ object.initialSalary);
     }
 
-    public void salaryCalculator(Employee object) {
+    static public void salaryCalculator(Employee object) {
         double  roleFactor;
         double  experienceFactor;
         double  PerformanceLevelFactor;
