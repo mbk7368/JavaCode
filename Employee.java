@@ -10,13 +10,14 @@ class Employee{
     int age;
     String role;
     String department;
-    int initialSalary;
+    double initialSalary;
+    double effectiveSalary;
     int yearsOfExperience;
     double PerformanceLevel;
     static public Map<String, Departments> DepartmentMap = new HashMap<>();
 
     ////////constructor....................................................................................
-    public Employee (int id1, String name1, int age1, String department1, String role1, int salary1,int yearsOfExperience1){
+    public Employee (int id1, String name1, int age1, String department1, String role1, double salary1,int yearsOfExperience1){
         this.id = id1;
         this.name = name1;
         this.age = age1;
@@ -25,6 +26,8 @@ class Employee{
         this.department = department1;
         this.PerformanceLevel = 0.5;
         this.yearsOfExperience = yearsOfExperience1;
+        this.effectiveSalary = 0;
+        salaryCalculator(this);
 
 
         boolean DepartmentExist = false;
@@ -80,6 +83,7 @@ class Employee{
         }
 
     }
+
     public void demote(Employee object) {
         switch (object.role) {
             case "CEO" -> {
@@ -110,9 +114,10 @@ class Employee{
     }
 
     public void increaseSalary(Employee object){
-        int x = object.initialSalary;
-        object.initialSalary = (object.initialSalary+ (int) Math.round( 0.1 * x ));
+        double x = object.initialSalary;
+        object.initialSalary = (object.initialSalary+ Math.round( 0.1 * x ));
     }
+
     public void displayDetails(Employee object) {
         System.out.println("Employee Details:");
         System.out.println("ID:"+ object.id);
@@ -123,11 +128,10 @@ class Employee{
         System.out.println("Salary:"+ object.initialSalary);
     }
 
-    public void salaryMultiplier(Employee object) {
-        int x = object.initialSalary;
-        double roleFactor;
-        double experienceFactor;
-        double PerformanceLevelMonetizer
+    public void salaryCalculator(Employee object) {
+        double  roleFactor;
+        double  experienceFactor;
+        double  PerformanceLevelFactor;
         switch (object.role) {
             case "CEO" -> {roleFactor = 2; }
             case "COO" -> { roleFactor = 1.9; }
@@ -138,17 +142,17 @@ class Employee{
             case "Worker" -> { roleFactor = 1.1; }
             default -> { roleFactor = 1.01; }
         }
-        if      (object.PerformanceLevel >= 1.0) PerformanceLevelMonetizer = 1.50;
-        else if (object.PerformanceLevel >= 0.9) PerformanceLevelMonetizer = 1.40;
-        else if (object.PerformanceLevel >= 0.8) PerformanceLevelMonetizer = 1.30;
-        else if (object.PerformanceLevel >= 0.7) PerformanceLevelMonetizer = 1.20;
-        else if (object.PerformanceLevel >= 0.6) PerformanceLevelMonetizer = 1.10;
-        else if (object.PerformanceLevel >= 0.5) PerformanceLevelMonetizer = 1.00;
-        else if (object.PerformanceLevel >= 0.4) PerformanceLevelMonetizer = 1.95;
-        else if (object.PerformanceLevel >= 0.3) PerformanceLevelMonetizer = 1.90;
-        else if (object.PerformanceLevel >= 0.2) PerformanceLevelMonetizer = 1.85;
-        else if (object.PerformanceLevel >= 0.1) PerformanceLevelMonetizer = 1.80;
-        else                                     PerformanceLevelMonetizer = 1.00;
+        if      (object.PerformanceLevel >= 1.0) PerformanceLevelFactor = 1.50;
+        else if (object.PerformanceLevel >= 0.9) PerformanceLevelFactor = 1.40;
+        else if (object.PerformanceLevel >= 0.8) PerformanceLevelFactor = 1.30;
+        else if (object.PerformanceLevel >= 0.7) PerformanceLevelFactor = 1.20;
+        else if (object.PerformanceLevel >= 0.6) PerformanceLevelFactor = 1.10;
+        else if (object.PerformanceLevel >= 0.5) PerformanceLevelFactor = 1.00;
+        else if (object.PerformanceLevel >= 0.4) PerformanceLevelFactor = 1.95;
+        else if (object.PerformanceLevel >= 0.3) PerformanceLevelFactor = 1.90;
+        else if (object.PerformanceLevel >= 0.2) PerformanceLevelFactor = 1.85;
+        else if (object.PerformanceLevel >= 0.1) PerformanceLevelFactor = 1.80;
+        else                                     PerformanceLevelFactor = 1.00;
 
         switch (object.yearsOfExperience) {
             case 10 -> { experienceFactor = 1.50; }
@@ -163,11 +167,10 @@ class Employee{
             case 1 -> { experienceFactor = 1.0; }
             default -> { experienceFactor = 1.00; }
         }
-    
-
-
+        object.effectiveSalary = (((object.initialSalary * roleFactor ) * PerformanceLevelFactor )* experienceFactor);
     }
-    public void assignPerformance(Employee object, double PerformanceLevel) {
+
+    public void assignPerformanceLevel(Employee object, double PerformanceLevel) {
         object.PerformanceLevel = PerformanceLevel; 
     }
 
