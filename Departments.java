@@ -6,8 +6,8 @@ import java.util.Map;
 public class Departments{
 
 //////////Vars
-    int ID;
-    String Name;
+    final int ID;
+    final String Name;
     List<String> members = new ArrayList<>();
     static public List<String> DepartmentList = new ArrayList<>();
     static public Map<String, Departments> DepartmentMap = new HashMap<>();
@@ -25,6 +25,11 @@ public class Departments{
     public void addEmployeeToDepartment( String member) {
         this.members.add(member);
     }
+
+    public void deleteDepartment() {
+        
+    }
+
 
     public void mappingDepartments() {
         DepartmentMap.put(this.Name,this);
