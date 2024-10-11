@@ -6,27 +6,26 @@ class main {
     public static void main(String[] args) {
 
         Departments itDept = new Departments("IT");
-        itDept.mappingDepartments(itDept);
+        itDept.mappingDepartments();
 
 
         Employee John = new Employee("John", 28, "IT", "Specialist", 40000, 2);
-        John.mappingEmployees(John);
+        John.mappingEmployees();
 
         Roles Specialist = new Roles("Specialist");
-        Specialist.mappingRoles(Specialist);
+        Specialist.mappingRoles();
 
-        
-        itDept.addEmployee("noor");
-        itDept.addEmployee("Daniel");
-        itDept.addEmployee("john");
-        itDept.addEmployee("tony");
+        itDept.addEmployeeToDepartment("noor");
+        itDept.addEmployeeToDepartment("Daniel");
+        itDept.addEmployeeToDepartment("john");
+        itDept.addEmployeeToDepartment("tony");
 
         itDept.removeEmployee("noor");
         itDept.removeEmployee("tony");
 
         itDept.getDepartmentDetails();
 
-        John.assignPerformanceLevel(John, 0.7);
+        John.assignPerformanceLevel(0.7);
 
         
     }

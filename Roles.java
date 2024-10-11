@@ -1,6 +1,6 @@
 import java.util.ArrayList;
-import java.util.List;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Roles {
@@ -8,12 +8,12 @@ public class Roles {
 
     ///vars........................
     int id;
-    static int rolesCounter = 0;
     String name;
-    double salaryMultiplier;
     List<String> responsibilities = new ArrayList<>();
     List<String> roleBasedEmployeelist = new ArrayList<>();
 
+
+    static int rolesCounter = 0;
     static List<String> rolelist = new ArrayList<>();
     static public Map<String, Roles> RolesMap = new HashMap<>();
 
@@ -25,9 +25,6 @@ public class Roles {
         this.name = name1;
         this.responsibilities = new ArrayList<>();
         this.roleBasedEmployeelist = new ArrayList<>();
-
-
-
     }
 
 
@@ -37,34 +34,27 @@ public class Roles {
 
     ///methods....................
 
-    public void getRoleDetails(){
-        
-    }
-
-    public void AssignRole(){
-
-    }
-
-    public void changeRole(){
-
-    }
-
     public void addResposibility(String res){
-
+        this.responsibilities.add(res);
     }
 
-    public void getRoleDetails() {
-        
-    }
-
-    public void addEmployee(String V1){
+    public void addEmployeeToRole(String V1){
         this.roleBasedEmployeelist.add(V1);
     }
 
-    public void mappingRoles(Roles obj){
-        RolesMap.put(obj.name, obj);
+    public void mappingRoles(){
+        RolesMap.put(this.name, this);
     }
 
+    public void getRoleDetails(){
+        System.out.println("Role ID:"+ this.id);
+        System.out.println("Role Name:"+ this.name);
+        System.out.println("Role Responsibilities:");
+        System.out.println(this.responsibilities);
+        System.out.println("Role Employees:");
+        System.out.println(this.roleBasedEmployeelist);
+        
+    }
 
 
 

@@ -22,12 +22,12 @@ public class Departments{
     }
 
 //////////Methods
-    public void addEmployee( String member) {
+    public void addEmployeeToDepartment( String member) {
         this.members.add(member);
     }
 
-    public void mappingDepartments(Departments obj) {
-        DepartmentMap.put(obj.Name,obj);
+    public void mappingDepartments() {
+        DepartmentMap.put(this.Name,this);
 
     }
 
