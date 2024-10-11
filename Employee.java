@@ -99,7 +99,7 @@ class Employee{
             case 1 -> { experienceFactor = 1.0; }
             default -> { experienceFactor = 1.00; }
         }
-        effectiveSalary = ((initialSalary1 * roleFactor ) * experienceFactor);
+        this.effectiveSalary = ((initialSalary1 * roleFactor ) * experienceFactor);
 
     }
 
@@ -133,6 +133,7 @@ class Employee{
             }
             default -> System.out.println("Employee role is unknown");
         }
+        this.salaryCalculator();
 
     }
 
@@ -162,22 +163,24 @@ class Employee{
             case "Worker" -> System.out.println("You can not demote a worker");
             default -> System.out.println("Employee role is unknown");
         }
+        this.salaryCalculator();
 
     }
 
     public void increaseSalary(){
         double x = this.initialSalary;
         this.initialSalary = (this.initialSalary+ Math.round( 0.1 * x ));
+        this.salaryCalculator();
     }
 
-    public void displayDetails() {
+    public void displayEmployeeDetails() {
         System.out.println("Employee Details:");
         System.out.println("ID:"+ this.id);
         System.out.println("Name:"+ this.name);
         System.out.println("Age:"+ this.age);
         System.out.println("Department:"+ this.department);
         System.out.println("Role:"+ this.role);
-        System.out.println("Salary:"+ this.initialSalary);
+        System.out.println("Salary:"+ this.effectiveSalary);
     }
 
     public void mappingEmployees() {
@@ -197,6 +200,7 @@ class Employee{
             if (this.role.equals(role1)) {System.err.println("Role was changes successfully");}
             else {{System.err.println("Role does not exist in the role list, you need to create the role then add emplotyees to it.");}}
         }
+        this.salaryCalculator();
     }
 
 
@@ -212,6 +216,7 @@ class Employee{
             if (this.department.equals(department1)) {System.err.println("Department was changes successfully");}
             else {System.err.println("Department does not exist in the Department list, you need to create the Deparment then add emplotyees to it.");}
         }
+        this.salaryCalculator();
     }
 
     public void salaryCalculator() {
@@ -258,6 +263,7 @@ class Employee{
 
     public void assignPerformanceLevel(double PerformanceLevel) {
         this.PerformanceLevel = PerformanceLevel; 
+        this.salaryCalculator();
     }
 
 }
