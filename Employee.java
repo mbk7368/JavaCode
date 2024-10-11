@@ -5,7 +5,6 @@ import java.util.Map;
 class Employee{
 
     /////////vars
-    static int numberOfAllEmployees = 1;
     final private int id;
     final private String name;
     private int age;
@@ -15,6 +14,10 @@ class Employee{
     double effectiveSalary;
     int yearsOfExperience;
     double PerformanceLevel;
+
+
+
+    static int numberOfAllEmployees = 1;
     static public Map<String, Employee> EmployeesMap = new HashMap<>();
 
     ////////constructor....................................................................................
