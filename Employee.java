@@ -5,31 +5,32 @@ import java.util.Map;
 class Employee{
 
     /////////vars
-    int id;
-    String name;
-    int age;
+    static int numberOfAllEmployees = 1;
+    final private int id;
+    final private String name;
+    private int age;
     String role;
     String department;
     double initialSalary;
     double effectiveSalary;
     int yearsOfExperience;
     double PerformanceLevel;
-    static public Map<String, Departments> DepartmentMap = new HashMap<>();
+    static public Map<String, Employee> EmployeesMap = new HashMap<>();
 
     ////////constructor....................................................................................
-    public Employee (int id1, String name1, int age1, String department1, String role1, double salary1,int yearsOfExperience1){
-        this.id = id1;
+    public Employee (String name1, int age1, String department1, String role1, double initialSalary1,int yearsOfExperience1){
+        this.id = numberOfAllEmployees;
+        numberOfAllEmployees = ( numberOfAllEmployees + 1);
         this.name = name1;
         this.age = age1;
         this.role = role1;
-        this.initialSalary = salary1;
+        this.initialSalary = initialSalary1;
         this.department = department1;
         this.PerformanceLevel = 0.5;
         this.yearsOfExperience = yearsOfExperience1;
         this.effectiveSalary = 0;
-        salaryCalculator(this);
 
-
+        //Assigning departmetn
         boolean DepartmentExist = false;
         for (String dept : Departments.DepartmentList){
             if ( dept.equals(department1)  ){
@@ -48,6 +49,58 @@ class Employee{
             System.out.println("Department does not exist");
 
         }
+
+        //Assigning role
+        boolean roleExist = false;
+        for (String Role : Role.rolelist){
+            if ( Role.equals(role1)  ){
+                roleExist = true;
+            }
+        }
+        if (roleExist) {
+            Role role1 = DepartmentMap.get(department1);
+            if (Department != null) {
+                Department.addEmployee(name1);
+            } else {
+                System.out.println("Error: Department object not found");
+            }
+
+        } else {
+            System.out.println("Department does not exist");
+
+        }
+
+
+
+
+        //calculating effective salary
+        double  roleFactor;
+        double  experienceFactor;
+        switch (role1) {
+            case "CEO" -> {roleFactor = 2; }
+            case "COO" -> { roleFactor = 1.9; }
+            case "DepartmentManager" -> { roleFactor = 1.8; }
+            case "ManagerAssisstant" -> { roleFactor = 1.6; }
+            case "Supervisor" -> { roleFactor = 1.4; }
+            case "Specialist" -> { roleFactor = 1.2; }
+            case "Worker" -> { roleFactor = 1.1; }
+            default -> { roleFactor = 1; }
+        }
+
+        switch (yearsOfExperience1) {
+            case 10 -> { experienceFactor = 1.50; }
+            case 9 -> { experienceFactor = 1.45; }
+            case 8 -> { experienceFactor = 1.40; }
+            case 7 -> { experienceFactor = 1.35; }
+            case 6 -> { experienceFactor = 1.30; }
+            case 5 -> { experienceFactor = 1.25; }
+            case 4 -> { experienceFactor = 1.20; }
+            case 3 -> { experienceFactor = 1.15; }
+            case 2 -> { experienceFactor = 1.1; }
+            case 1 -> { experienceFactor = 1.0; }
+            default -> { experienceFactor = 1.00; }
+        }
+        effectiveSalary = ((initialSalary1 * roleFactor ) * experienceFactor);
 
     }
 
@@ -128,6 +181,11 @@ class Employee{
         System.out.println("Salary:"+ object.initialSalary);
     }
 
+    public void mappingEmployees(Employee obj) {
+        EmployeesMap.put(obj.name,obj);
+
+    }
+
     public void salaryCalculator(Employee object) {
         double  roleFactor;
         double  experienceFactor;
@@ -175,7 +233,6 @@ class Employee{
     }
 
 }
-
 
 //Classes.....................................................
 class Manager {

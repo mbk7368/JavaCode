@@ -1,6 +1,7 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
-
+import java.util.Map;
 
 public class Departments{
 
@@ -9,6 +10,7 @@ public class Departments{
     String Name;
     List<String> members = new ArrayList<>();
     static public List<String> DepartmentList = new ArrayList<>();
+    static public Map<String, Departments> DepartmentMap = new HashMap<>();
 
 ///////Constructor
     public Departments(String V1) {
@@ -16,13 +18,17 @@ public class Departments{
         this.ID = counter;
         this.Name = V1;
         DepartmentList.add(V1);
+
     }
 
 //////////Methods
     public void addEmployee( String member) {
-
         this.members.add(member);
-    
+    }
+
+    public void mappingDepartments(Departments obj) {
+        DepartmentMap.put(obj.Name,obj);
+
     }
 
     public void removeEmployee(String member) {
