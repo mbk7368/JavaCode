@@ -29,8 +29,9 @@ class Employee{
         this.PerformanceLevel = 0.5;
         this.yearsOfExperience = yearsOfExperience1;
         this.effectiveSalary = 0;
+        
 
-        //Assigning departmetn
+        //Assigning department........................................................
         boolean DepartmentExist = false;
         for (String dept : Departments.DepartmentList){
             if ( dept.equals(department1)  ){
@@ -38,7 +39,7 @@ class Employee{
             }
         }
         if (DepartmentExist) {
-            Departments Department = DepartmentMap.get(department1);
+            Departments Department = Departments.DepartmentMap.get(department1);
             if (Department != null) {
                 Department.addEmployee(name1);
             } else {
@@ -50,30 +51,28 @@ class Employee{
 
         }
 
-        //Assigning role
+        //Assigning role...........................................................
         boolean roleExist = false;
-        for (String Role : Role.rolelist){
+        for (String Role : Roles.rolelist){
             if ( Role.equals(role1)  ){
                 roleExist = true;
             }
         }
         if (roleExist) {
-            Role role1 = DepartmentMap.get(department1);
-            if (Department != null) {
-                Department.addEmployee(name1);
+            Roles roleobj = Roles.RolesMap.get(role1);
+            if (roleobj != null) {
+                roleobj.addEmployee(name1);
             } else {
-                System.out.println("Error: Department object not found");
+                System.out.println("Error: Role object not found");
             }
 
         } else {
-            System.out.println("Department does not exist");
+            System.out.println("Role does not exist");
 
         }
 
 
-
-
-        //calculating effective salary
+        //calculating effective salary..............................................................
         double  roleFactor;
         double  experienceFactor;
         switch (role1) {

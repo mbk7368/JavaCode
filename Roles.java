@@ -12,6 +12,7 @@ public class Roles {
     String name;
     double salaryMultiplier;
     List<String> responsibilities = new ArrayList<>();
+    List<String> roleBasedEmployeelist = new ArrayList<>();
 
     static List<String> rolelist = new ArrayList<>();
     static public Map<String, Roles> RolesMap = new HashMap<>();
@@ -23,6 +24,7 @@ public class Roles {
         this.id = rolesCounter;
         this.name = name1;
         this.responsibilities = new ArrayList<>();
+        this.roleBasedEmployeelist = new ArrayList<>();
 
 
 
@@ -53,6 +55,10 @@ public class Roles {
 
     public void getRoleDetails() {
         
+    }
+
+    public void addEmployee(String V1){
+        this.roleBasedEmployeelist.add(V1);
     }
 
     public void mappingRoles(Roles obj){

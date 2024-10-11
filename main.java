@@ -12,8 +12,8 @@ class main {
         Employee John = new Employee("John", 28, "IT", "Specialist", 40000, 2);
         John.mappingEmployees(John);
 
-        Roles specialist = new Roles();
-        specialist.mappingRoles(specialist);
+        Roles Specialist = new Roles("Specialist");
+        Specialist.mappingRoles(Specialist);
 
         
         itDept.addEmployee("noor");
