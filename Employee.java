@@ -4,12 +4,12 @@ import java.util.List;
 import java.util.Map;
 
 
-class Employee{
+class Employee implements EmployeeInterface {
 
     /////////vars
-    final int id;
-    final String name;
-    int age;
+    final private int id;
+    final private String name;
+    private int age;
     String role;
     String department;
     double initialSalary;
@@ -19,7 +19,7 @@ class Employee{
 
 
 
-    static int numberOfAllEmployees = 1;
+    static private int numberOfAllEmployees = 1;
     static public Map<String, Employee> EmployeesMap = new HashMap<>();
     static public List<String> allEmployees = new ArrayList<>();
 
@@ -112,6 +112,7 @@ class Employee{
     }
 
     ///////Methods
+    @override
     public void promote() {
         switch (this.role) {
             case "CEO" -> System.out.println("You can not promote a CEO");
@@ -144,7 +145,7 @@ class Employee{
         this.salaryCalculator();
 
     }
-
+    @override
     public void demote() {
         switch (this.role) {
             case "CEO" -> {
@@ -174,13 +175,13 @@ class Employee{
         this.salaryCalculator();
 
     }
-
+    @override
     public void increaseSalary(){
         double x = this.initialSalary;
         this.initialSalary = (this.initialSalary+ Math.round( 0.1 * x ));
         this.salaryCalculator();
     }
-
+    @override
     public void displayEmployeeDetails() {
         System.out.println("Employee Details:");
         System.out.println("ID:"+ this.id);
@@ -190,12 +191,12 @@ class Employee{
         System.out.println("Role:"+ this.role);
         System.out.println("Salary:"+ this.effectiveSalary);
     }
-
+    @override
     public void mappingEmployees() {
         EmployeesMap.put(this.name,this);
 
     }
-
+    @override
     public void changeRole(String role1){
         if (this.role.equals(role1)) {System.err.println("The Role you entered is identical to the previous role.");}
         else {
@@ -210,8 +211,7 @@ class Employee{
         }
         this.salaryCalculator();
     }
-
-
+    @override
     public void changeDepartment(String department1) {
         if (this.department.equals(department1)) {System.err.println("The Department you entered is identical to the previous Department.");}
         else {
@@ -226,7 +226,7 @@ class Employee{
         }
         this.salaryCalculator();
     }
-
+    @override
     public void salaryCalculator() {
         double  roleFactor;
         double  experienceFactor;
@@ -268,16 +268,32 @@ class Employee{
         }
         this.effectiveSalary = (((this.initialSalary * roleFactor ) * PerformanceLevelFactor )* experienceFactor);
     }
-
+    @override
     public void assignPerformanceLevel(double PerformanceLevel) {
         this.PerformanceLevel = PerformanceLevel; 
         this.salaryCalculator();
+    }
+    @override
+    public int getEmployeeId() {
+        return this.id;
+    }
+    @override
+    public String getEmployeename() {
+        return this.name;
+    }
+    @override
+    public int getEmployeeage() {
+        return this.age;
+    }
+    @override
+    public int getNumberOfAllEmployees() {
+        return Employee.numberOfAllEmployees;
     }
 
 }
 
 //Classes.....................................................
-class Manager {
+class MManager {
     
 
 }
