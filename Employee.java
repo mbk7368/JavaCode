@@ -1,4 +1,6 @@
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 
@@ -19,11 +21,14 @@ class Employee{
 
     static int numberOfAllEmployees = 1;
     static public Map<String, Employee> EmployeesMap = new HashMap<>();
+    static public List<String> allEmployees = new ArrayList<>();
+
 
     ////////constructor....................................................................................
     public Employee (String name1, int age1, String department1, String role1, double initialSalary1,int yearsOfExperience1){
         this.id = numberOfAllEmployees;
         numberOfAllEmployees = ( numberOfAllEmployees + 1);
+        allEmployees.add(name1);
         this.name = name1;
         this.age = age1;
         this.role = role1;
