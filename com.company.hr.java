@@ -1,18 +1,10 @@
 
-interface EmployeeInterface {
+interface EmployeeBehaviours {
     
     public void promote();
     public void demote();
-    public void increaseSalary();
-    public void changeRole(String role1);
-    public void changeDepartment(String department1);
     public void salaryCalculator();
     public void assignPerformanceLevel(double PerformanceLevel);
-    public int getEmployeeId();
-    public String getEmployeename();
-    public int getEmployeeage();
-    public int getNumberOfAllEmployees();
-    public void mappingEmployees();
     public void displayEmployeeDetails();
     
 }
@@ -29,7 +21,6 @@ abstract public void displayManagerDetails();
 
 }
 
-/////employee subclasses
-///interface multiple implementations
-///testing in Main
-///implement error handling
+//interface multiple implementations.
+//testing in Main.
+//implement error handling.

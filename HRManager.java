@@ -1,7 +1,7 @@
 
 
 
-class HRManager extends Manager {
+class HRManager extends Manager implements EmployeeBehaviours {
 
 ///Vars
 private int id;
@@ -16,6 +16,34 @@ public void HRManager(int id1, String name1) {
 }
 
 ///methods
+
+/*  public void promote();
+    public void demote();
+    public void salaryCalculator();
+    public void assignPerformanceLevel(double PerformanceLevel);
+    public void displayEmployeeDetails(); */
+@Override
+public void promote() {
+
+};
+@Override
+public void demote() {
+
+};
+@Override
+public void salaryCalculator() {
+
+};
+@Override
+public void assignPerformanceLevel(double PerformanceLevel) {
+
+};
+@Override
+public void displayEmployeeDetails() {
+    HRManager.displayManagerDetails();
+
+};
+
 @Override
 public void hireEmployee (String name1, int age1, String department1, String role1, double initialSalary1,int yearsOfExperience1){
     Employee newEmployee = new Employee(name1, age1, department1, role1, initialSalary1,yearsOfExperience1);

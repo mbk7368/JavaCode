@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 
-class Employee implements EmployeeInterface {
+class Employee implements EmployeeBehaviours {
 
     /////////vars
     final private int id;
@@ -37,7 +37,7 @@ class Employee implements EmployeeInterface {
         this.PerformanceLevel = 0.5;
         this.yearsOfExperience = yearsOfExperience1;
         this.effectiveSalary = 0;
-        
+
 
         //Assigning department........................................................
         boolean DepartmentExist = false;
@@ -146,7 +146,7 @@ class Employee implements EmployeeInterface {
         this.salaryCalculator();
 
     }
-    
+
     @Override
     public void demote() {
         switch (this.role) {
@@ -177,61 +177,7 @@ class Employee implements EmployeeInterface {
         this.salaryCalculator();
 
     }
-    
-    @Override
-    public void increaseSalary(){
-        double x = this.initialSalary;
-        this.initialSalary = (this.initialSalary+ Math.round( 0.1 * x ));
-        this.salaryCalculator();
-    }
-    
-    @Override
-    public void displayEmployeeDetails() {
-        System.out.println("Employee Details:");
-        System.out.println("ID:"+ this.id);
-        System.out.println("Name:"+ this.name);
-        System.out.println("Age:"+ this.age);
-        System.out.println("Department:"+ this.department);
-        System.out.println("Role:"+ this.role);
-        System.out.println("Salary:"+ this.effectiveSalary);
-    }
-    
-    @Override
-    public void mappingEmployees() {
-        EmployeesMap.put(this.name,this);}
-    
-    @Override
-    public void changeRole(String role1){
-        if (this.role.equals(role1)) {System.err.println("The Role you entered is identical to the previous role.");}
-        else {
-            for (String roleIterator: Roles.rolelist)
-                if (roleIterator.equals(role1)) {
-                    this.role = role1;
-                    Roles roleobj = Roles.RolesMap.get(role1);
-                    roleobj.addEmployeeToRole(this.name);
-                }
-            if (this.role.equals(role1)) {System.err.println("Role was changes successfully");}
-            else {{System.err.println("Role does not exist in the role list, you need to create the role then add emplotyees to it.");}}
-        }
-        this.salaryCalculator();
-    }
-    
-    @Override
-    public void changeDepartment(String department1) {
-        if (this.department.equals(department1)) {System.err.println("The Department you entered is identical to the previous Department.");}
-        else {
-            for (String departmentIterator: Departments.DepartmentList)
-                if (departmentIterator.equals(department1)) {
-                    this.department = department1;
-                    Departments departmentobj = Departments.DepartmentMap.get(department1);
-                    departmentobj.addEmployeeToDepartment(this.name);
-                }
-            if (this.department.equals(department1)) {System.err.println("Department was changes successfully");}
-            else {System.err.println("Department does not exist in the Department list, you need to create the Deparment then add emplotyees to it.");}
-        }
-        this.salaryCalculator();
-    }
-    
+
     @Override
     public void salaryCalculator() {
         double  roleFactor;
@@ -274,29 +220,74 @@ class Employee implements EmployeeInterface {
         }
         this.effectiveSalary = (((this.initialSalary * roleFactor ) * PerformanceLevelFactor )* experienceFactor);
     }
-    
+
     @Override
     public void assignPerformanceLevel(double PerformanceLevel) {
         this.PerformanceLevel = PerformanceLevel; 
         this.salaryCalculator();
     }
-    
+  
     @Override
+    public void displayEmployeeDetails() {
+        System.out.println("Employee Details:");
+        System.out.println("ID:"+ this.id);
+        System.out.println("Name:"+ this.name);
+        System.out.println("Age:"+ this.age);
+        System.out.println("Department:"+ this.department);
+        System.out.println("Role:"+ this.role);
+        System.out.println("Salary:"+ this.effectiveSalary);
+    }
+
+    public void increaseSalary(){
+        this.initialSalary = (this.initialSalary * 1.2 );
+        this.salaryCalculator();
+    }
+
+    public void mappingEmployees() {
+        EmployeesMap.put(this.name,this);}
+    
+    public void changeRole(String role1){
+        if (this.role.equals(role1)) {System.err.println("The Role you entered is identical to the previous role.");}
+        else {
+            for (String roleIterator: Roles.rolelist)
+                if (roleIterator.equals(role1)) {
+                    this.role = role1;
+                    Roles roleobj = Roles.RolesMap.get(role1);
+                    roleobj.addEmployeeToRole(this.name);
+    }
+            if (this.role.equals(role1)) {System.err.println("Role was changes successfully");}
+            else {{System.err.println("Role does not exist in the role list, you need to create the role then add emplotyees to it.");}}
+        }
+        this.salaryCalculator();
+    }
+    
+    public void changeDepartment(String department1) {
+        if (this.department.equals(department1)) {System.err.println("The Department you entered is identical to the previous Department.");}
+        else {
+            for (String departmentIterator: Departments.DepartmentList)
+                if (departmentIterator.equals(department1)) {
+                    this.department = department1;
+                    Departments departmentobj = Departments.DepartmentMap.get(department1);
+                    departmentobj.addEmployeeToDepartment(this.name);
+                }
+            if (this.department.equals(department1)) {System.err.println("Department was changes successfully");}
+            else {System.err.println("Department does not exist in the Department list, you need to create the Deparment then add emplotyees to it.");}
+        }
+        this.salaryCalculator();
+    }
+    
     public int getEmployeeId() {
         return this.id;
     }
     
-    @Override
     public String getEmployeename() {
         return this.name;
     }
     
-    @Override
     public int getEmployeeage() {
         return this.age;
     }
     
-    @Override
     public int getNumberOfAllEmployees() {
         return Employee.numberOfAllEmployees;
     }
@@ -308,10 +299,48 @@ class ManagerEmployee extends Employee {
 
     public ManagerEmployee (String name1, int age1, String department1, String role1, double initialSalary1,int yearsOfExperience1) {
         super(name1,age1, department1,  role1,  initialSalary1, yearsOfExperience1);
-        this.salaryCalculator();
+    }
+    @Override
+    public void promote() {
+        switch (this.role) {
+            case "CEO" -> System.out.println("You can not promote a CEO");
+            case "COO" -> {
+                this.role = "CEO";
+                System.out.println("COO was promoted to CEO");
+            }
+            case "DepartmentManager" -> {
+                this.role = "COO";
+                System.out.println("Department Manager was promoted to COO");
+            }
+            default -> System.out.println("The Manager role is unknown");
+        }
+    
     }
 
-    public void promote() {
+    @Override
+    public void demote() {
+        switch (this.role) {
+            case "CEO" -> {
+                this.role = "COO";
+                System.out.println("Employee was demoted to COO");
+            }
+            case "COO" -> {
+                this.role = "DepartmentManager";
+                System.out.println("Employee was demoted to DepartmentManager");
+            }
+            case "DepartmentManager" -> {
+                System.out.println("You can not demote a manager to a non-managerial position");
+            }
+            default -> System.out.println("The managerial role is unknown");
+        }
+        this.salaryCalculator();
+
+    }
+
+    @Override
+    public void increaseSalary(){
+        this.initialSalary = (this.initialSalary * 1.3 );
+        this.salaryCalculator();
 
     }
 
@@ -319,6 +348,63 @@ class ManagerEmployee extends Employee {
 
 
 class RegularEmployee extends Employee {
+
+
+    public RegularEmployee (String name1, int age1, String department1, String role1, double initialSalary1,int yearsOfExperience1) {
+        super(name1,age1, department1,  role1,  initialSalary1, yearsOfExperience1);
+    }
+
+    @Override
+    public void promote() {
+        switch (this.role) {
+
+            case "ManagerAssisstant" -> {
+                System.out.println("You cant promote a regular employee to a managerial position");
+            }
+            case "Supervisor" -> {
+                this.role = "ManagerAssisstant";
+                System.out.println("Employee was promoted to ManagerAssisstant");
+            }
+            case "Specialist" -> {
+                this.role = "Supervisor";
+                System.out.println("Employee was promoted to Supervisor");
+            }
+            case "Worker" -> {
+                this.role = "Specialist";
+                System.out.println("Employee was promoted to Specialist");
+            }
+            default -> System.out.println("Employee role is unknown");
+        }
+        this.salaryCalculator();
+        
+    
+    }
+
+    @Override
+    public void demote() {
+        switch (this.role) {
+            case "ManagerAssisstant" -> {
+                this.role = "Supervisor";
+                System.out.println("Employee was demoted to Supervisor");
+            }
+            case "Supervisor" -> {
+                this.role = "Specialist";
+                System.out.println("Employee was demoted to Specialist");
+            }
+            case "Specialist" -> System.out.println("You can not demote a Specialist");
+            case "Worker" -> System.out.println("You can not demote a worker");
+            default -> System.out.println("Employee role is unknown");
+        }
+        this.salaryCalculator();
+
+    }
+
+    @Override
+    public void increaseSalary(){
+        this.initialSalary = (this.initialSalary * 1.1 );
+        this.salaryCalculator();
+
+    }
 
 }
 
