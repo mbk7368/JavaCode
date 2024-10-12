@@ -7,9 +7,9 @@ import java.util.Map;
 class Employee{
 
     /////////vars
-    final private int id;
-    final private String name;
-    private int age;
+    final int id;
+    final String name;
+    int age;
     String role;
     String department;
     double initialSalary;

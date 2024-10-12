@@ -7,7 +7,7 @@ public class Departments{
 
 //////////Vars
     final int ID;
-    final String Name;
+    final String name;
     List<String> members = new ArrayList<>();
     static public List<String> DepartmentList = new ArrayList<>();
     static public Map<String, Departments> DepartmentMap = new HashMap<>();
@@ -16,7 +16,7 @@ public class Departments{
     public Departments(String V1) {
         int counter = (1 + (int)DepartmentList.size());
         this.ID = counter;
-        this.Name = V1;
+        this.name = V1;
         DepartmentList.add(V1);
 
     }
@@ -32,7 +32,7 @@ public class Departments{
 
 
     public void mappingDepartments() {
-        DepartmentMap.put(this.Name,this);
+        DepartmentMap.put(this.name,this);
 
     }
 
@@ -44,7 +44,7 @@ public class Departments{
 
     public void getDepartmentDetails() {
         System.out.println("Department ID:" + ID);
-        System.out.println("Department Name:" + Name);
+        System.out.println("Department Name:" + name);
         System.out.println("Department Memebers:" + members);
 
     }
