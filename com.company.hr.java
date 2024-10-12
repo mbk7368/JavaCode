@@ -11,6 +11,9 @@ interface EmployeeInterface {
     public int getEmployeeId();
     public String getEmployeename();
     public int getEmployeeage();
+    public int getNumberOfAllEmployees();
+    public void mappingEmployees();
+    public void displayEmployeeDetails();
     
 }
 
@@ -26,3 +29,7 @@ abstract public void displayManagerDetails();
 
 }
 
+/////employee subclasses
+///interface multiple implementations
+///testing in Main
+///implement error handling

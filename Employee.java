@@ -112,7 +112,8 @@ class Employee implements EmployeeInterface {
     }
 
     ///////Methods
-    @override
+    
+    @Override
     public void promote() {
         switch (this.role) {
             case "CEO" -> System.out.println("You can not promote a CEO");
@@ -145,7 +146,8 @@ class Employee implements EmployeeInterface {
         this.salaryCalculator();
 
     }
-    @override
+    
+    @Override
     public void demote() {
         switch (this.role) {
             case "CEO" -> {
@@ -175,13 +177,15 @@ class Employee implements EmployeeInterface {
         this.salaryCalculator();
 
     }
-    @override
+    
+    @Override
     public void increaseSalary(){
         double x = this.initialSalary;
         this.initialSalary = (this.initialSalary+ Math.round( 0.1 * x ));
         this.salaryCalculator();
     }
-    @override
+    
+    @Override
     public void displayEmployeeDetails() {
         System.out.println("Employee Details:");
         System.out.println("ID:"+ this.id);
@@ -191,12 +195,12 @@ class Employee implements EmployeeInterface {
         System.out.println("Role:"+ this.role);
         System.out.println("Salary:"+ this.effectiveSalary);
     }
-    @override
+    
+    @Override
     public void mappingEmployees() {
-        EmployeesMap.put(this.name,this);
-
-    }
-    @override
+        EmployeesMap.put(this.name,this);}
+    
+    @Override
     public void changeRole(String role1){
         if (this.role.equals(role1)) {System.err.println("The Role you entered is identical to the previous role.");}
         else {
@@ -211,7 +215,8 @@ class Employee implements EmployeeInterface {
         }
         this.salaryCalculator();
     }
-    @override
+    
+    @Override
     public void changeDepartment(String department1) {
         if (this.department.equals(department1)) {System.err.println("The Department you entered is identical to the previous Department.");}
         else {
@@ -226,7 +231,8 @@ class Employee implements EmployeeInterface {
         }
         this.salaryCalculator();
     }
-    @override
+    
+    @Override
     public void salaryCalculator() {
         double  roleFactor;
         double  experienceFactor;
@@ -268,24 +274,29 @@ class Employee implements EmployeeInterface {
         }
         this.effectiveSalary = (((this.initialSalary * roleFactor ) * PerformanceLevelFactor )* experienceFactor);
     }
-    @override
+    
+    @Override
     public void assignPerformanceLevel(double PerformanceLevel) {
         this.PerformanceLevel = PerformanceLevel; 
         this.salaryCalculator();
     }
-    @override
+    
+    @Override
     public int getEmployeeId() {
         return this.id;
     }
-    @override
+    
+    @Override
     public String getEmployeename() {
         return this.name;
     }
-    @override
+    
+    @Override
     public int getEmployeeage() {
         return this.age;
     }
-    @override
+    
+    @Override
     public int getNumberOfAllEmployees() {
         return Employee.numberOfAllEmployees;
     }
@@ -293,13 +304,21 @@ class Employee implements EmployeeInterface {
 }
 
 //Classes.....................................................
-class MManager {
-    
+class ManagerEmployee extends Employee {
+
+    public ManagerEmployee (String name1, int age1, String department1, String role1, double initialSalary1,int yearsOfExperience1) {
+        super(name1,age1, department1,  role1,  initialSalary1, yearsOfExperience1);
+        this.salaryCalculator();
+    }
+
+    public void promote() {
+
+    }
 
 }
 
 
-class Regular {
+class RegularEmployee extends Employee {
 
 }
 
