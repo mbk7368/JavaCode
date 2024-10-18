@@ -1,7 +1,7 @@
 
 
 
-class main {
+class Main {
     
     public static void main(String[] args) {
 
@@ -36,7 +36,7 @@ class main {
 
         itDept.getDepartmentDetails();
 
-        John.assignPerformanceLevel(0.7);
+        JohnMane.assignPerformanceLevel(0.7);
 
         
     }

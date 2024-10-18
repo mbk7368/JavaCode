@@ -7,8 +7,8 @@ import java.util.Map;
 class HRManager extends Manager implements EmployeeBehaviours {
 
 ///Vars
-private int id;
-private String name;
+final private int id;
+final private String name;
 double PerformanceLevel;
 int yearsOfExperience;
 double initialSalary;
@@ -16,7 +16,7 @@ double effectiveSalary;
 
 
 static private int IdCounter = 0;
-static public List HRManagerList = new ArrayList<>(); 
+static public List<String> HRManagerList = new ArrayList<>(); 
 static public Map<String, HRManager> HRManagerMap = new HashMap<>();
 
 ///constructor
@@ -76,7 +76,7 @@ public void salaryCalculator() {
 };
 @Override
 public void assignPerformanceLevel(double PerformanceLevel1) {
-    this.PerformanceLeve = PerformanceLevel1; 
+    this.PerformanceLevel = PerformanceLevel1; 
     this.salaryCalculator();
 };
 @Override
@@ -136,5 +136,9 @@ public void displayManagerDetails() {
 public void MappingHRManager(){
     HRManagerMap.put(this.name , this);
 }
+
+    public double getEffectiveSalary() {
+        return this.effectiveSalary;
+    }
 
 }

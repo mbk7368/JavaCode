@@ -1,4 +1,5 @@
 
+@SuppressWarnings("unused")
 interface EmployeeBehaviours {
     
     public void promote();
@@ -9,6 +10,7 @@ interface EmployeeBehaviours {
     
 }
 
+@SuppressWarnings("unused")
 abstract class Manager {
   
 abstract public void hireEmployee(String name1, int age1, String department1, String role1, double initialSalary1,int yearsOfExperience1);
