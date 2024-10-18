@@ -11,14 +11,18 @@ int yearsOfExperience;
 double initialSalary;
 double effectiveSalary;
 
+
+static private int IdCounter = 0;
+
 ///constructor
 
-public void HRManager(int id1, String name1, double initialSalary1) {
-    this.id = id1;
+public void HRManager(String name1, double initialSalary1) {
+    IdCounter += 1;
+    this.id = IdCounter;
     this.name= name1;
     this.PerformanceLevel = 0.5;
     this.initialSalary = initialSalary1;
-    this.effectiveSalary = initialSalary;
+    this.effectiveSalary = this.initialSalary;
 }
 
 ///methods
