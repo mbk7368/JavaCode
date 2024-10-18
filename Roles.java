@@ -27,11 +27,6 @@ public class Roles {
         this.roleBasedEmployeelist = new ArrayList<>();
     }
 
-
-
-
-
-
     ///methods....................
 
     public void addResposibility(String res){
