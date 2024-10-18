@@ -1,4 +1,7 @@
-
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 
 class HRManager extends Manager implements EmployeeBehaviours {
@@ -13,16 +16,19 @@ double effectiveSalary;
 
 
 static private int IdCounter = 0;
+static public List HRManagerList = new ArrayList<>(); 
+static public Map<String, HRManager> HRManagerMap = new HashMap<>();
 
 ///constructor
 
-public void HRManager(String name1, double initialSalary1) {
+public HRManager(String name1, double initialSalary1) {
     IdCounter += 1;
     this.id = IdCounter;
-    this.name= name1;
+    this.name = name1;
     this.PerformanceLevel = 0.5;
     this.initialSalary = initialSalary1;
     this.effectiveSalary = this.initialSalary;
+    HRManagerList.add(name1);
 }
 
 ///methods
@@ -125,6 +131,10 @@ public void displayAllEmployees (){
 public void displayManagerDetails() {
     System.out.println(this.id);
     System.out.println(this.name);
+}
+
+public void MappingHRManager(){
+    HRManagerMap.put(this.name , this);
 }
 
 }

@@ -8,10 +8,11 @@ class main {
         Departments itDept = new Departments("IT");
         itDept.mappingDepartments();
 
-        Employee John = new Employee("John", 28, "IT", "Specialist", 40000, 2);
-        John.mappingEmployees();
+        Employee JohnMane = new Employee("John Mane", 28, "IT", "Specialist", 4000, 2);
+        JohnMane.mappingEmployees();
 
-        HRManager Sarah = new HRManager( SarahWalker, double initialSalary1)
+        HRManager SarahWalker = new HRManager ( "Sarah Walker", 5000.0);
+        SarahWalker.MappingHRManager();
 
         Roles Specialist = new Roles("Specialist");
         Specialist.mappingRoles();
