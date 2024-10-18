@@ -19,7 +19,6 @@ class main {
         itDept.addEmployeeToDepartment("Daniel");
         itDept.addEmployeeToDepartment("john");
         itDept.addEmployeeToDepartment("tony");
-
         itDept.removeEmployee("noor");
         itDept.removeEmployee("tony");
 

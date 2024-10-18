@@ -5,18 +5,15 @@ import java.util.Map;
 
 public class Roles {
 
-
     ///vars........................
     int id;
     String name;
     List<String> responsibilities = new ArrayList<>();
     List<String> roleBasedEmployeelist = new ArrayList<>();
 
-
     static int rolesCounter = 0;
     static List<String> rolelist = new ArrayList<>();
     static public Map<String, Roles> RolesMap = new HashMap<>();
-
 
     ///constructor.................
     public Roles(String name1) {
@@ -26,11 +23,6 @@ public class Roles {
         this.responsibilities = new ArrayList<>();
         this.roleBasedEmployeelist = new ArrayList<>();
     }
-
-
-
-
-
 
     ///methods....................
 
