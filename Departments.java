@@ -25,8 +25,6 @@ public class Departments{
 
     public void addEmployeeToDepartment( String member) {
         this.members.add(member);
-        Employee emp1 = Employee.EmployeesMap.get(member);
-        emp1.changeDepartment(this.name);
     }
 
     public void mappingDepartments() {
