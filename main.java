@@ -8,17 +8,17 @@ class main {
     public static void main(String[] args) {
 
         //Creating Departments
-        Departments itDeparttment = new Departments("IT");
-        itDeparttment.mappingDepartments();
-        Departments MarketingDepartment = new Departments("Marketing");
-        MarketingDepartment.mappingDepartments();
+        Departments IT = new Departments("IT");
+        IT.mappingDepartments();
+        Departments Marketing = new Departments("Marketing");
+        Marketing.mappingDepartments();
 
         //Creating Roles
         Roles CEO = new Roles("CEO");
         CEO.mappingRoles();
         Roles COO = new Roles("COO");
         COO.mappingRoles();
-        Roles DepartmentManager = new Roles("Department Manager");
+        Roles DepartmentManager = new Roles("DepartmentManager");
         DepartmentManager.mappingRoles();
         Roles ManagerAssisstant = new Roles("ManagerAssisstant");
         ManagerAssisstant.mappingRoles();
@@ -47,15 +47,15 @@ class main {
         RegularEmployee WillFing = new RegularEmployee ("Will Fing", 32, "Marketing", "ManagerAssisstant", 6000, 5);
         WillFing.mappingEmployees();
 
-        ManagerEmployee MarryCurry  = new ManagerEmployee("Marry Curry", 33, "Merketing", "DepartmentManager", 7000, 5);
+        ManagerEmployee MarryCurry  = new ManagerEmployee("Marry Curry", 33, "Marketing", "DepartmentManager", 7000, 5);
         MarryCurry.mappingEmployees();
 
 
         //testing department methods 
 
-        itDeparttment.addEmployeeToDepartment(WillFing.getEmployeename());
-        itDeparttment.removeEmployee(MattDaemon.getEmployeename());
-        itDeparttment.getDepartmentDetails();
+        IT.addEmployeeToDepartment(WillFing.getEmployeename());
+        IT.removeEmployee(MattDaemon.getEmployeename());
+        IT.getDepartmentDetails(); 
 
 
 

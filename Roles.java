@@ -22,6 +22,7 @@ public class Roles {
         this.name = name1;
         this.responsibilities = new ArrayList<>();
         this.roleBasedEmployeelist = new ArrayList<>();
+        rolelist.add(name1);
     }
 
     ///methods....................

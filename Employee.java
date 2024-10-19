@@ -74,10 +74,8 @@ public class Employee implements EmployeeBehaviours {
                 System.out.println("Error: Role object not found");
             }
 
-        } else {
-            System.out.println("Role does not exist");
-
         }
+        else {System.out.println("Role does not exist");}
 
 
         //calculating effective salary..............................................................
