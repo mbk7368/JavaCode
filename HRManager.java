@@ -97,8 +97,7 @@ public void fireEmployee (String name1){
         Employee.EmployeesMap.remove(name1);
         Employee.allEmployees.remove(name1);
         dept1.removeEmployee(name1);
-        
-
+        System.err.println("Employee was successfully removed");
     }
     else {System.err.println("Employee was not found, make sure you enter the correct name.");}
 }
@@ -107,24 +106,23 @@ public void promoteEmployee (Employee promotedEmployee){
     promotedEmployee.promote();
 }
 @Override
-public void deomoteEmployee (Employee demotedEmployee){
+public void demoteEmployee (Employee demotedEmployee){
     demotedEmployee.demote();
 }
 @Override
 public void transferEmployee(Employee transferedEmployee, Departments newDept){
     Departments oldDpetObj = Departments.DepartmentMap.get(transferedEmployee.department);
-    if (!transferedEmployee.department.equals(newDept.name)) {
-        for (String dept : Departments.DepartmentList) {
-            if (dept.equals(newDept.name)){
+    for (String dept : Departments.DepartmentList)
+        if (dept.equals(newDept.name)) {
+            if (!transferedEmployee.department.equals(newDept.name)) {            
                 transferedEmployee.department =  newDept.name;
                 newDept.addEmployeeToDepartment(transferedEmployee.getEmployeename());
-                oldDpetObj.removeEmployee(transferedEmployee.getEmployeename());
-            }
-
-            }
+                oldDpetObj.removeEmployee(transferedEmployee.getEmployeename());              
+                }
+                
+            else if (transferedEmployee.department.equals(newDept.name)) {System.err.println("The old Department is identical to the new department");}
         }
-    else if (transferedEmployee.department.equals(newDept.name)) {System.err.println("The old Department is identical to the new department");}
-    else {System.err.println("The old Department is identical to the new department");}
+        else {System.err.println("Department was not found");}
 
 }
 @Override

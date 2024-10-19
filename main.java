@@ -51,27 +51,14 @@ class Main {
         MarryCurry.mappingEmployees();
 
 
-
-        //testing all methods
+        //testing department methods 
 
         itDeparttment.addEmployeeToDepartment(WillFing.getEmployeename());
         itDeparttment.removeEmployee(MattDaemon.getEmployeename());
         itDeparttment.getDepartmentDetails();
 
 
-        
-        /*  public void getDepartmentDetails()
-         * public void deleteDepartment()
-         *  public void mappingDepartments()
-         * removeEmployee(String member)
-         * public void addEmployeeToDepartment
-         * 
-         * 
-         * 
-         * 
-         * 
-         * 
-         */
+
 
 
         
