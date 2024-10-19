@@ -57,11 +57,56 @@ class main {
         IT.removeEmployee(MattDaemon.getEmployeename());
         IT.getDepartmentDetails(); 
 
+        //testing employee methods
+
+        /* getNumberOfAllEmployees()
+         * getEmployeeage()
+         * getEmployeename()
+         * getEmployeeId()
+         * changeDepartment(String department1)
+         * changeRole(String role1)
+         * mappingEmployees()
+         * increaseSalary()
+         * displayEmployeeDetails()
+         * assignPerformanceLevel(double PerformanceLevel)
+         * salaryCalculator()
+         * demote()
+         * promote()
+         */
 
 
 
+         //testing HRManager Methods
 
+         /* promote()
+          * demote()
+            salaryCalculator()
+            assignPerformanceLevel(double PerformanceLevel1)
+            displayEmployeeDetails()
+            hireEmployee (String name1, int age1, String department1, String role1, double initialSalary1,int yearsOfExperience1)
+            fireEmployee (String name1)
+            promoteEmployee (Employee promotedEmployee)
+            demoteEmployee (Employee demotedEmployee)
+            transferEmployee(Employee transferedEmployee, Departments newDept)
+            displayAllEmployees ()
+            displayManagerDetails()
+            getEffectiveSalary()
+          */
         
+
+          //Testing Manager Methods
+
+          /* 
+           * 
+           * 
+           * 
+           * 
+           * 
+           * 
+           * 
+           * 
+           * 
+           */
     }
 }
 
