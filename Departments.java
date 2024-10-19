@@ -22,31 +22,25 @@ public class Departments{
     }
 
 //////////Methods
+
     public void addEmployeeToDepartment( String member) {
         this.members.add(member);
+        Employee emp1 = Employee.EmployeesMap.get(member);
+        emp1.changeDepartment(this.name);
     }
-
-    public void deleteDepartment() {
-        
-    }
-
 
     public void mappingDepartments() {
         DepartmentMap.put(this.name,this);
-
     }
 
     public void removeEmployee(String member) {
-
         this.members.remove(member);
-    
     }
 
     public void getDepartmentDetails() {
         System.out.println("Department ID:" + ID);
         System.out.println("Department Name:" + name);
         System.out.println("Department Memebers:" + members);
-
     }
     
 }

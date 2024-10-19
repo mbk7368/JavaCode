@@ -1,19 +1,17 @@
 
 
 
+
+
 class Main {
     
     public static void main(String[] args) {
 
         //Creating Departments
-        Departments itDept = new Departments("IT");
-        itDept.mappingDepartments();
-        Departments HR = new Departments("Human Resources");
-        HR.mappingDepartments();
-        Departments Accounting = new Departments("Accounting");
-        Accounting.mappingDepartments();
-        Departments Marketing = new Departments("Marketing");
-        Marketing.mappingDepartments();
+        Departments itDeparttment = new Departments("IT");
+        itDeparttment.mappingDepartments();
+        Departments MarketingDepartment = new Departments("Marketing");
+        MarketingDepartment.mappingDepartments();
 
         //Creating Roles
         Roles CEO = new Roles("CEO");
@@ -40,33 +38,41 @@ class Main {
 
         //Creating Employees
 
-
-
         Employee JohnMane = new Employee("John Mane", 28, "IT", "Specialist", 4000, 2);
         JohnMane.mappingEmployees();
-
-        ManagerEmployee MarryCurry  = new ManagerEmployee("Marry Curry", 33, "IT", "DepartmentManager", 7000, 5);
-        MarryCurry.mappingEmployees();
-
+        
         RegularEmployee MattDaemon = new RegularEmployee ("Matt Daemon", 38, "IT", "Worker", 3000, 1);
         MattDaemon.mappingEmployees();
+        
+        RegularEmployee WillFing = new RegularEmployee ("Will Fing", 32, "Marketing", "ManagerAssisstant", 6000, 5);
+        WillFing.mappingEmployees();
+
+        ManagerEmployee MarryCurry  = new ManagerEmployee("Marry Curry", 33, "Merketing", "DepartmentManager", 7000, 5);
+        MarryCurry.mappingEmployees();
 
 
 
+        //testing all methods
+
+        itDeparttment.addEmployeeToDepartment(WillFing.getEmployeename());
+        itDeparttment.removeEmployee(MattDaemon.getEmployeename());
+        itDeparttment.getDepartmentDetails();
 
 
+        
+        /*  public void getDepartmentDetails()
+         * public void deleteDepartment()
+         *  public void mappingDepartments()
+         * removeEmployee(String member)
+         * public void addEmployeeToDepartment
+         * 
+         * 
+         * 
+         * 
+         * 
+         * 
+         */
 
-
-        itDept.addEmployeeToDepartment("noor");
-        itDept.addEmployeeToDepartment("Daniel");
-        itDept.addEmployeeToDepartment("john");
-        itDept.addEmployeeToDepartment("tony");
-        itDept.removeEmployee("noor");
-        itDept.removeEmployee("tony");
-
-        itDept.getDepartmentDetails();
-
-        JohnMane.assignPerformanceLevel(0.7);
 
         
     }

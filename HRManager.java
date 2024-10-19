@@ -91,7 +91,15 @@ public void hireEmployee (String name1, int age1, String department1, String rol
 }
 @Override
 public void fireEmployee (String name1){
-    if (Employee.EmployeesMap.containsKey(name1)){Employee.EmployeesMap.remove(name1);}
+    if (Employee.EmployeesMap.containsKey(name1)){
+        Employee firedEmployee = Employee.EmployeesMap.get(name1);
+        Departments dept1 = Departments.DepartmentMap.get(firedEmployee.department);
+        Employee.EmployeesMap.remove(name1);
+        Employee.allEmployees.remove(name1);
+        dept1.removeEmployee(name1);
+        
+
+    }
     else {System.err.println("Employee was not found, make sure you enter the correct name.");}
 }
 @Override
