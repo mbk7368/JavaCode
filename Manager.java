@@ -1,17 +1,6 @@
 
-@SuppressWarnings("unused")
-interface EmployeeBehaviours {
-    
-    public void promote();
-    public void demote();
-    public void salaryCalculator();
-    public void assignPerformanceLevel(double PerformanceLevel);
-    public void displayEmployeeDetails();
-    
-}
 
-@SuppressWarnings("unused")
-abstract class Manager {
+public abstract class Manager {
   
 abstract public void hireEmployee(String name1, int age1, String department1, String role1, double initialSalary1,int yearsOfExperience1);
 abstract public void fireEmployee(String name1);

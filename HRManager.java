@@ -119,7 +119,7 @@ public void transferEmployee(Employee transferedEmployee, Departments newDept){
                 newDept.addEmployeeToDepartment(transferedEmployee.getEmployeename());
                 oldDpetObj.removeEmployee(transferedEmployee.getEmployeename());              
                 }
-                
+
             else if (transferedEmployee.department.equals(newDept.name)) {System.err.println("The old Department is identical to the new department");}
         }
         else {System.err.println("Department was not found");}

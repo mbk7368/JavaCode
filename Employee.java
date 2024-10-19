@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 
-class Employee implements EmployeeBehaviours {
+public class Employee implements EmployeeBehaviours {
 
     /////////vars
     final private int id;
