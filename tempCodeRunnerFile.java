@@ -1,1 +1,0 @@
-        MarryCurry.displayEmployeeDetails();
