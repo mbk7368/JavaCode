@@ -31,7 +31,11 @@ public class Roles {
         this.responsibilities.add(res);
     }
 
-    public void addEmployeeToRole(String V1){
+    public void addUninitiatedEmployeeToRole(String V1){
+        this.roleBasedEmployeelist.add(V1);
+    }
+
+    public void addInitiatedEmployeeToRole(String V1){
         Employee emp1 = Employee.EmployeesMap.get(V1);
         String role1 = this.name;
         emp1.role = role1;

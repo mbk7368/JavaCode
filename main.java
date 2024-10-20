@@ -44,7 +44,7 @@ class main {
         ManagerEmployee MarryCurry  = new ManagerEmployee("Marry Curry", 33, "Marketing", "DepartmentManager", 7000, 5);
         MarryCurry.mappingEmployees();
 
-/*         //testing department methods 
+        //testing department methods 
         IT.addEmployeeToDepartment(WillFing.getEmployeename());
         IT.removeEmployee(MattDaemon.getEmployeename());
         IT.getDepartmentDetails(); 
@@ -66,14 +66,14 @@ class main {
         MarryCurry.displayEmployeeDetails();
         MarryCurry.demote();
         MarryCurry.displayEmployeeDetails();
-    */     
+        
 
 
 
         //testing HRManager Methods
 
 
-/*         SarahWalker.promote();
+        SarahWalker.promote();
         SarahWalker.demote();
         SarahWalker.displayManagerDetails();
         SarahWalker.salaryCalculator();
@@ -90,7 +90,7 @@ class main {
         SarahWalker.transferEmployee(Employee.EmployeesMap.get("NoorKanaan"), Marketing);
         Employee.EmployeesMap.get("NoorKanaan").displayEmployeeDetails();
         SarahWalker.fireEmployee ("NoorKanaan");
-        SarahWalker.displayAllEmployees (); */
+        SarahWalker.displayAllEmployees ();
          
         
 
@@ -111,6 +111,7 @@ class main {
           MattDaemon.promote();
           MattDaemon.demote();
           MattDaemon.increaseSalary();
+          MattDaemon.displayEmployeeDetails();
           
 
           //Testing Roles Methods
@@ -118,7 +119,7 @@ class main {
           DepartmentManager.getRoleDetails();
           DepartmentManager.addResposibility("Generating Status reports about the department internal operations");
           Employee.EmployeesMap.get("John Mane").displayEmployeeDetails();
-          DepartmentManager.addEmployeeToRole("John Mane");
+          DepartmentManager.addInitiatedEmployeeToRole("John Mane");
           Employee.EmployeesMap.get("John Mane").displayEmployeeDetails();
           DepartmentManager.getRoleDetails();
 
