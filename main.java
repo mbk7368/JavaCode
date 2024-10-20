@@ -1,8 +1,4 @@
 
-
-
-
-
 class main {
     
     public static void main(String[] args) {
@@ -48,7 +44,7 @@ class main {
         ManagerEmployee MarryCurry  = new ManagerEmployee("Marry Curry", 33, "Marketing", "DepartmentManager", 7000, 5);
         MarryCurry.mappingEmployees();
 
-        //testing department methods 
+/*         //testing department methods 
         IT.addEmployeeToDepartment(WillFing.getEmployeename());
         IT.removeEmployee(MattDaemon.getEmployeename());
         IT.getDepartmentDetails(); 
@@ -70,26 +66,35 @@ class main {
         MarryCurry.displayEmployeeDetails();
         MarryCurry.demote();
         MarryCurry.displayEmployeeDetails();
-        
+    */     
 
 
 
-         //testing HRManager Methods
+        //testing HRManager Methods
 
-         /* promote()
-          * demote()
-            salaryCalculator()
-            assignPerformanceLevel(double PerformanceLevel1)
-            displayEmployeeDetails()
-            hireEmployee (String name1, int age1, String department1, String role1, double initialSalary1,int yearsOfExperience1)
-            fireEmployee (String name1)
-            promoteEmployee (Employee promotedEmployee)
-            demoteEmployee (Employee demotedEmployee)
-            transferEmployee(Employee transferedEmployee, Departments newDept)
-            displayAllEmployees ()
-            displayManagerDetails()
-            getEffectiveSalary()
-          */
+
+        SarahWalker.promote();
+        SarahWalker.demote();
+        SarahWalker.displayManagerDetails();
+        SarahWalker.salaryCalculator();
+        SarahWalker.displayManagerDetails();
+        SarahWalker.assignPerformanceLevel(0.7);
+        SarahWalker.displayManagerDetails();
+        SarahWalker.displayEmployeeDetails();
+        SarahWalker.getEffectiveSalary();
+        SarahWalker.hireEmployee ("NoorKanaan", 28, "IT", "Specialist", 4200,2);
+        SarahWalker.displayAllEmployees ();
+        Employee.EmployeesMap.get("NoorKanaan").displayEmployeeDetails();
+        SarahWalker.promoteEmployee (Employee.EmployeesMap.get("NoorKanaan"));
+        Employee.EmployeesMap.get("NoorKanaan").displayEmployeeDetails();
+        SarahWalker.demoteEmployee (Employee.EmployeesMap.get("NoorKanaan"));
+        Employee.EmployeesMap.get("NoorKanaan").displayEmployeeDetails();
+        SarahWalker.transferEmployee(Employee.EmployeesMap.get("NoorKanaan"), Marketing);
+        Employee.EmployeesMap.get("NoorKanaan").displayEmployeeDetails();
+        SarahWalker.fireEmployee ("NoorKanaan");
+        Employee.EmployeesMap.get("NoorKanaan").displayEmployeeDetails();
+        SarahWalker.displayAllEmployees ();
+         
         
 
           //Testing ManagerEmployee Methods

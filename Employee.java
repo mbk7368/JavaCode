@@ -316,6 +316,7 @@ class ManagerEmployee extends Employee {
             }
             default -> System.out.println("The Manager role is unknown");
         }
+        this.salaryCalculator();
     
     }
 

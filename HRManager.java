@@ -143,7 +143,7 @@ public void MappingHRManager(){
     HRManagerMap.put(this.name , this);
 }
 
-    public double getEffectiveSalary() {
+public double getEffectiveSalary() {
         return this.effectiveSalary;
     }
 
