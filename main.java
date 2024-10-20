@@ -30,14 +30,12 @@ class main {
         Worker.mappingRoles();
 
         //Creating HRManager
-
         HRManager SarahWalker = new HRManager ( "Sarah Walker", 5000.0);
         SarahWalker.MappingHRManager();
         HRManager RobertSapolsky = new HRManager ( "Robert Sapolsky", 5000.0);
         RobertSapolsky.MappingHRManager();
 
         //Creating Employees
-
         Employee JohnMane = new Employee("John Mane", 28, "IT", "Specialist", 4000, 2);
         JohnMane.mappingEmployees();
         
@@ -50,29 +48,29 @@ class main {
         ManagerEmployee MarryCurry  = new ManagerEmployee("Marry Curry", 33, "Marketing", "DepartmentManager", 7000, 5);
         MarryCurry.mappingEmployees();
 
-
         //testing department methods 
-
         IT.addEmployeeToDepartment(WillFing.getEmployeename());
         IT.removeEmployee(MattDaemon.getEmployeename());
         IT.getDepartmentDetails(); 
 
         //testing employee methods
 
-        /* getNumberOfAllEmployees()
-         * getEmployeeage()
-         * getEmployeename()
-         * getEmployeeId()
-         * changeDepartment(String department1)
-         * changeRole(String role1)
-         * mappingEmployees()
-         * increaseSalary()
-         * displayEmployeeDetails()
-         * assignPerformanceLevel(double PerformanceLevel)
-         * salaryCalculator()
-         * demote()
-         * promote()
-         */
+        Employee.getNumberOfAllEmployees();
+        MarryCurry.getEmployeeage();
+        MarryCurry.getEmployeename();
+        MarryCurry.getEmployeeId();
+        MarryCurry.changeDepartment("IT");
+        MarryCurry.changeRole("DepartmentManager");
+        MarryCurry.displayEmployeeDetails();
+        MarryCurry.increaseSalary();
+        MarryCurry.displayEmployeeDetails();
+        MarryCurry.assignPerformanceLevel(0.7);
+        MarryCurry.displayEmployeeDetails();
+        MarryCurry.promote();
+        MarryCurry.displayEmployeeDetails();
+        MarryCurry.demote();
+        MarryCurry.displayEmployeeDetails();
+        
 
 
 
@@ -94,19 +92,34 @@ class main {
           */
         
 
-          //Testing Manager Methods
+          //Testing ManagerEmployee Methods
 
           /* 
-           * 
-           * 
-           * 
-           * 
-           * 
-           * 
-           * 
-           * 
-           * 
+           * promote()
+           * demote()
+           * increaseSalary()
            */
+
+          //Testing RegularEmployee Methods
+
+          /* 
+           * promote()
+           * demote()
+           * increaseSalary()
+           */
+
+          //Testing Roles Methods
+
+
+
+
+
+           /* 
+            * addResposibility(String res)
+            * addEmployeeToRole(String V1)
+            * getRoleDetails()
+            */
+
     }
 }
 

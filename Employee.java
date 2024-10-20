@@ -189,19 +189,21 @@ public class Employee implements EmployeeBehaviours {
             case "Supervisor" -> { roleFactor = 1.4; }
             case "Specialist" -> { roleFactor = 1.2; }
             case "Worker" -> { roleFactor = 1.1; }
-            default -> { roleFactor = 1.01; }
+            default -> { roleFactor = 1.00; }
         }
-        if      (this.PerformanceLevel >= 1.0) PerformanceLevelFactor = 1.50;
+
+        
+        if      (this.PerformanceLevel >= 1.0) {PerformanceLevelFactor = 1.50;}
         else if (this.PerformanceLevel >= 0.9) PerformanceLevelFactor = 1.40;
         else if (this.PerformanceLevel >= 0.8) PerformanceLevelFactor = 1.30;
         else if (this.PerformanceLevel >= 0.7) PerformanceLevelFactor = 1.20;
         else if (this.PerformanceLevel >= 0.6) PerformanceLevelFactor = 1.10;
         else if (this.PerformanceLevel >= 0.5) PerformanceLevelFactor = 1.00;
-        else if (this.PerformanceLevel >= 0.4) PerformanceLevelFactor = 1.95;
-        else if (this.PerformanceLevel >= 0.3) PerformanceLevelFactor = 1.90;
-        else if (this.PerformanceLevel >= 0.2) PerformanceLevelFactor = 1.85;
-        else if (this.PerformanceLevel >= 0.1) PerformanceLevelFactor = 1.80;
-        else                                     PerformanceLevelFactor = 1.00;
+        else if (this.PerformanceLevel >= 0.4) PerformanceLevelFactor = 0.95;
+        else if (this.PerformanceLevel >= 0.3) PerformanceLevelFactor = 0.90;
+        else if (this.PerformanceLevel >= 0.2) PerformanceLevelFactor = 0.85;
+        else if (this.PerformanceLevel <= 0.2) PerformanceLevelFactor = 0.80;
+        else                                   PerformanceLevelFactor = 1.00;
 
         switch (this.yearsOfExperience) {
             case 10 -> { experienceFactor = 1.50; }
@@ -242,7 +244,9 @@ public class Employee implements EmployeeBehaviours {
     }
 
     public void mappingEmployees() {
-        EmployeesMap.put(this.name,this);}
+        EmployeesMap.put(this.name,this);
+        this.salaryCalculator();    
+    }
     
     public void changeRole(String role1){
         if (this.role.equals(role1)) {System.err.println("The Role you entered is identical to the previous role.");}
@@ -286,7 +290,7 @@ public class Employee implements EmployeeBehaviours {
         return this.age;
     }
     
-    public int getNumberOfAllEmployees() {
+    static public int getNumberOfAllEmployees() {
         return Employee.numberOfAllEmployees;
     }
 
