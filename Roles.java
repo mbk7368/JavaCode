@@ -32,6 +32,10 @@ public class Roles {
     }
 
     public void addEmployeeToRole(String V1){
+        Employee emp1 = Employee.EmployeesMap.get(V1);
+        String role1 = this.name;
+        emp1.role = role1;
+        emp1.salaryCalculator();
         this.roleBasedEmployeelist.add(V1);
     }
 

@@ -249,7 +249,7 @@ public class Employee implements EmployeeBehaviours {
     }
     
     public void changeRole(String role1){
-        if (this.role.equals(role1)) {System.err.println("The Role you entered is identical to the previous role.");}
+        if (this.role.equals(role1)) {System.out.println("The Role you entered is identical to the previous role.");}
         else {
             for (String roleIterator: Roles.rolelist)
                 if (roleIterator.equals(role1)) {
@@ -257,14 +257,14 @@ public class Employee implements EmployeeBehaviours {
                     Roles roleobj = Roles.RolesMap.get(role1);
                     roleobj.addEmployeeToRole(this.name);
     }
-            if (this.role.equals(role1)) {System.err.println("Role was changes successfully");}
-            else {{System.err.println("Role does not exist in the role list, you need to create the role then add emplotyees to it.");}}
+            if (this.role.equals(role1)) {System.out.println("Role was changes successfully");}
+            else {{System.out.println("Role does not exist in the role list, you need to create the role then add emplotyees to it.");}}
         }
         this.salaryCalculator();
     }
     
     public void changeDepartment(String department1) {
-        if (this.department.equals(department1)) {System.err.println("The Department you entered is identical to the previous Department.");}
+        if (this.department.equals(department1)) {System.out.println("The Department you entered is identical to the previous Department.");}
         else {
             for (String departmentIterator: Departments.DepartmentList)
                 if (departmentIterator.equals(department1)) {
@@ -272,8 +272,8 @@ public class Employee implements EmployeeBehaviours {
                     Departments departmentobj = Departments.DepartmentMap.get(department1);
                     departmentobj.addEmployeeToDepartment(this.name);
                 }
-            if (this.department.equals(department1)) {System.err.println("Department was changes successfully");}
-            else {System.err.println("Department does not exist in the Department list, you need to create the Deparment then add emplotyees to it.");}
+            if (this.department.equals(department1)) {System.out.println("Department was changes successfully");}
+            else {System.out.println("Department does not exist in the Department list, you need to create the Deparment then add emplotyees to it.");}
         }
         this.salaryCalculator();
     }

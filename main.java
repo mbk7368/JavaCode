@@ -26,9 +26,9 @@ class main {
         Worker.mappingRoles();
 
         //Creating HRManager
-        HRManager SarahWalker = new HRManager ( "Sarah Walker", 5000.0);
+        HRManager SarahWalker = new HRManager ( "Sarah Walker", 5000.0, 2);
         SarahWalker.MappingHRManager();
-        HRManager RobertSapolsky = new HRManager ( "Robert Sapolsky", 5000.0);
+        HRManager RobertSapolsky = new HRManager ( "Robert Sapolsky", 5000.0, 4);
         RobertSapolsky.MappingHRManager();
 
         //Creating Employees
@@ -73,15 +73,13 @@ class main {
         //testing HRManager Methods
 
 
-        SarahWalker.promote();
+/*         SarahWalker.promote();
         SarahWalker.demote();
         SarahWalker.displayManagerDetails();
         SarahWalker.salaryCalculator();
         SarahWalker.displayManagerDetails();
         SarahWalker.assignPerformanceLevel(0.7);
         SarahWalker.displayManagerDetails();
-        SarahWalker.displayEmployeeDetails();
-        SarahWalker.getEffectiveSalary();
         SarahWalker.hireEmployee ("NoorKanaan", 28, "IT", "Specialist", 4200,2);
         SarahWalker.displayAllEmployees ();
         Employee.EmployeesMap.get("NoorKanaan").displayEmployeeDetails();
@@ -92,38 +90,39 @@ class main {
         SarahWalker.transferEmployee(Employee.EmployeesMap.get("NoorKanaan"), Marketing);
         Employee.EmployeesMap.get("NoorKanaan").displayEmployeeDetails();
         SarahWalker.fireEmployee ("NoorKanaan");
-        Employee.EmployeesMap.get("NoorKanaan").displayEmployeeDetails();
-        SarahWalker.displayAllEmployees ();
+        SarahWalker.displayAllEmployees (); */
          
         
 
           //Testing ManagerEmployee Methods
 
-          /* 
-           * promote()
-           * demote()
-           * increaseSalary()
-           */
+          MarryCurry.displayEmployeeDetails();
+          MarryCurry.promote();
+          MarryCurry.displayEmployeeDetails();
+          MarryCurry.demote();
+          MarryCurry.displayEmployeeDetails();
+          MarryCurry.increaseSalary();
+          MarryCurry.displayEmployeeDetails();
+          
 
           //Testing RegularEmployee Methods
 
-          /* 
-           * promote()
-           * demote()
-           * increaseSalary()
-           */
+          MattDaemon.displayEmployeeDetails();
+          MattDaemon.promote();
+          MattDaemon.demote();
+          MattDaemon.increaseSalary();
+          
 
           //Testing Roles Methods
 
+          DepartmentManager.getRoleDetails();
+          DepartmentManager.addResposibility("Generating Status reports about the department internal operations");
+          Employee.EmployeesMap.get("John Mane").displayEmployeeDetails();
+          DepartmentManager.addEmployeeToRole("John Mane");
+          Employee.EmployeesMap.get("John Mane").displayEmployeeDetails();
+          DepartmentManager.getRoleDetails();
 
-
-
-
-           /* 
-            * addResposibility(String res)
-            * addEmployeeToRole(String V1)
-            * getRoleDetails()
-            */
+           
 
     }
 }
