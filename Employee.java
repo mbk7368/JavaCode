@@ -69,7 +69,7 @@ public class Employee implements EmployeeBehaviours {
         if (roleExist) {
             Roles roleobj = Roles.RolesMap.get(role1);
             if (roleobj != null) {
-                roleobj.addEmployeeToRole(name1);
+                roleobj.addUninitiatedEmployeeToRole(name1);
             } else {
                 System.out.println("Error: Role object not found");
             }
@@ -255,7 +255,7 @@ public class Employee implements EmployeeBehaviours {
                 if (roleIterator.equals(role1)) {
                     this.role = role1;
                     Roles roleobj = Roles.RolesMap.get(role1);
-                    roleobj.addEmployeeToRole(this.name);
+                    roleobj.addInitiatedEmployeeToRole(this.name);
     }
             if (this.role.equals(role1)) {System.out.println("Role was changes successfully");}
             else {{System.out.println("Role does not exist in the role list, you need to create the role then add emplotyees to it.");}}
